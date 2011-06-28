@@ -10,6 +10,9 @@
 
 
 @implementation HelloViewController
+@synthesize textField;
+@synthesize label;
+@synthesize userName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +25,9 @@
 
 - (void)dealloc
 {
+    [textField release];
+    [label release];
+    [userName release];
     [super dealloc];
 }
 
@@ -43,6 +49,8 @@
 
 - (void)viewDidUnload
 {
+    [self setTextField:nil];
+    [self setLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -54,4 +62,16 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)changeGreeting:(id)sender {
+    self.userName = textField.text;
+    
+    NSString *nameString = self.userName;
+    if ([nameString length] == 0) {
+        nameString = @"World";
+    }
+    
+    NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
+    label.text = greeting;
+    [greeting release];
+}
 @end
