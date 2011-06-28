@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HelloViewController : UIViewController {
+@interface HelloViewController : UIViewController <UITextFieldDelegate> {
     
     UITextField *textField;
     UILabel *label;

@@ -74,4 +74,11 @@
     label.text = greeting;
     [greeting release];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == textField) { // not really necessary, as there are only one textfield
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
 @end
