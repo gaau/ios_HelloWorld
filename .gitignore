@@ -1,0 +1,10 @@
+.DS_Store
+xcuserdata
+*.modelv3
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.pyc
+*~.nib/
+build/*
+profile
