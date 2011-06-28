@@ -45,6 +45,21 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    CGRect frame = CGRectMake(20.0, 68.0, 280.0, 31.0);
+    UITextField *aTextField = [[UITextField alloc] initWithFrame:frame];
+    self.textField = aTextField;
+    [aTextField release];
+    
+    textField.textAlignment = UITextAlignmentCenter;
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    textField.placeholder = @"Your name";
+    
+    textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    textField.keyboardType = UIKeyboardTypeDefault;
+    textField.returnKeyType = UIReturnKeyDone;
+    textField.delegate = self;
+    [self.view addSubview:textField];
 }
 
 - (void)viewDidUnload

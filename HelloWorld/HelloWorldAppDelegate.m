@@ -18,8 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    HelloViewController *aViewController = [[HelloViewController alloc]
-                                            initWithNibName:@"HelloViewController" bundle:[NSBundle mainBundle]];
+    HelloViewController *aViewController = [[HelloViewController alloc] init];
     self.helloViewController = aViewController;
     [aViewController release];
     
